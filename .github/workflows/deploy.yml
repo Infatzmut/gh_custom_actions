@@ -42,6 +42,9 @@ jobs:
     steps:
       - name: Get code
         uses: actions/checkout@v3
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 18
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
       - name: Build website
