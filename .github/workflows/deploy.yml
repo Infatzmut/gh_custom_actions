@@ -12,6 +12,8 @@ jobs:
       - name: Load & cache dependencies
         id: cache-deps
         uses: ./.github/actions/cached-deps
+        with:
+          caching: 'false'
       - name: Output information
         run: echo "Cache used? ${{ steps.cache-deps.outputs.used-cache }}"
       - name: Lint code
@@ -25,6 +27,8 @@ jobs:
           fetch-depth: 1
       - name: Load & cache dependencies
         uses: ./.github/actions/cached-deps
+        with:
+          caching: 'false'
       - name: Test code
         id: run-tests
         run: npm run test
