@@ -13,8 +13,8 @@ runs:
   using: 'composite'
   steps:
     - uses: actions/setup-node@v3
-        with:
-          node-version: 18
+      with:
+        node-version: 18
     - name: Cache dependencies
       id: cache
       if: inputs.caching == 'true'
